@@ -8,17 +8,11 @@
 </head>
 <body>
 
-<nav class ="navbar">
-	<ul>
-		<li class ="active">
-			<%= link_to "Home", projects_path %>
-			<%= link_to "Projects", projects_path %>
-		</li>
-	</ul>
+	<%= render 'layouts/shared/nav' %>
 
-</nav>
-
-<%= yield %>
+	<div class="container">
+		<%= yield %>
+	</div>
 
 </body>
 </html>

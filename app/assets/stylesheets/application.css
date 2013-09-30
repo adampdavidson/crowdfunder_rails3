@@ -1,0 +1,20 @@
+/*
+*= require_self
+*= require_tree
+*/
+
+body {
+	padding-top: 40px;
+}
+
+.title{
+	list-style-type: none;
+}
+
+.navbar-inner {
+	background-image: linear-gradient(to bottom, rgb(136, 14, 14), #B97979);
+}
+
+a{
+		color: #000000;
+	}
