@@ -1,0 +1,9 @@
+<h1>Listing projects</h1>
+<%= @projects.inspect %>
+<li class="pageinfo"></li>
+<% @projects.each do |project| %>
+<br>
+  <li class="title"><%= project[:title] %></li>
+
+ 
+<% end %>
