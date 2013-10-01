@@ -1,23 +1,2 @@
 @import "bootstrap";
 
-.navbar-inner {
-	background-image: linear-gradient(to bottom, rgb(136, 14, 14), #B97979);
-}
-
-.navbar .brand {
-	color: #FFFFFF;
-	text-shadow: 0 2px 0 black;
-}
-
-.navbar .nav {
-	color: #000000;
-	text-shadow: 0 1px 0 black;
-}
-
-.navbar .nav > li > a {
-float: none;
-padding: 10px 15px 10px;
-color: #1F1F2E;
-text-decoration: none;
-text-shadow: 0 1px 0 black;
-}
