@@ -1,8 +1,5 @@
 require 'spec_helper'
 
-
-
-
 describe "Project Listing" do
   describe "when visiting the index page" do
     it "should display all projects" do
@@ -37,12 +34,11 @@ describe "Project Listing" do
       # Expect on this page the first h1 has the text project1's title
       page.should have_selector('h1:first', text: project1.title)
       expect(page).to have_selector('h1:first', text: project1.title)
-      # On a project's show page, the Projects nav element should still be active
-      page.should have_selector('.navbar ul li.active a', text: "Projects")
-      expect(page).to have_selector('.navbar ul li.active a', text: "Projects")
     end
 
     it "should display the navigation" do
+      # Create a project to visit its show page at the end of the test
+      project1 = FactoryGirl.create(:project, :title => "Project 1")
       # Visit the root URL
       visit "/"
       # Expect the page we're on is root
@@ -59,8 +55,11 @@ describe "Project Listing" do
       # Expect the projects nav element is active
       page.should have_selector('.navbar ul li.active a', text: "Projects") 
       expect(page).to have_selector('.navbar ul li.active a', text: "Projects")
-  
-    end    
-  
+
+      # On a project's show page, the Projects nav element should still be active
+      click_link 'Project 1'
+      page.should have_selector('.navbar ul li.active a', text: "Projects")
+      expect(page).to have_selector('.navbar ul li.active a', text: "Projects")
+    end   
   end
 end

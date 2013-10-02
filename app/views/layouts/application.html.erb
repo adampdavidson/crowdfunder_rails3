@@ -9,7 +9,8 @@
 <body>
 
 	<%= render 'layouts/shared/nav' %>
-
+	<%= flash[:notice] %>
+	<%= flash[:alert] %>
 	<div class="container">
 		<%= yield %>
 	</div>
