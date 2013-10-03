@@ -1,0 +1,14 @@
+<% @projects.each do |project| %>
+		
+	<div class="project">
+		<li class="project">
+		  <%= link_to project.title, project %>
+		  <br />
+		  <p>
+		    <%= project.teaser %>
+		  </p>
+		</li>
+	</div>
+
+<% end %>
+

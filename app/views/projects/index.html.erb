@@ -1,15 +1,6 @@
-<%= params.inspect %>
-<%= controller_path %>
-
 <h1>Listing projects</h1>
 
-<% @projects.each do |project| %>
-	<div class="project">
-	  	<li class="title">
-	  		<%= link_to "#{project[:title]}", "projects/#{project.id}" %></li>
-	  	<li class="title"> Teaser: <%= project.teaser %> </li>
-		<li class="title"> Description: <%= project.description %> </li>
-		<li class="title"> Goal: $<%= project.goal.to_f %> </li>
-	</div>
-	<br>
-<% end %>
+<%= render 'project' %>
+
+<%= paginate @projects %>
+
