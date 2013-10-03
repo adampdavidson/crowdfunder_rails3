@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe "Project Listing" do
   describe "when visiting the index page" do
+    
     it "should list only my projects" do 
       me = setup_signed_in_user
       other_user = FactoryGirl.create :user
@@ -16,6 +17,24 @@ describe "Project Listing" do
 
       page.should have_no_content("Other Dude's Project")
       expect(page).to have_no_content("Other Dude's Project")
+    end
+
+    it "should display navigation" do 
+      user = setup_signed_in_user
+
+      visit '/'
+
+      page.find('.navbar ul').click_link('My Projects')
+      expect(current_path).to eq(my_projects_path)
+
+      # My Projects nav element should be active on the My Projects page
+      expect(find('.navbar ul li.active a').text).to eq("My Projects")
+      expect(page).to have_selector('.navbar ul li.active a', count: 1)
+
+      # The nav element should still be active on the new project page
+      click_link 'New Project'
+      expect(current_path).to eq(new_my_project_path)
+      expect(find('.navbar ul li.active a').text).to eq("My Projects")
     end
 
     it "should edit my project" do
