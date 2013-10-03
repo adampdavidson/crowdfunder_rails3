@@ -45,6 +45,12 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'strong_parameters'
 
+gem 'jquery-rails'
+gem 'kaminari'
+gem 'kaminari-bootstrap'
+
+# gem "cancan" #look into it online
+
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
