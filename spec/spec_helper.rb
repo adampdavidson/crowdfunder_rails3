@@ -34,4 +34,5 @@ RSpec.configure do |config|
   config.order = "random"
   config.include Capybara::DSL
   config.include SessionSupport
+  config.include MailerSupport
 end
