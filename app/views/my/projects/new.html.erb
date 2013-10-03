@@ -1,0 +1,40 @@
+<h2>Create a New Project:</h2>
+
+<%= form_for [:my, @project] do |f| %>
+
+<% if @project.errors.any? %>
+  <div class = "alert">
+  	<h4>Try again</h4>
+    <ul>
+  		<% for message in @project.errors.full_messages %>
+  			<li><%= message %></li>
+  		<% end %>
+  	</ul>
+  </div>
+ <% end %>
+
+  <div class="field">
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+  </div> 
+
+  <div class="field">
+  <%= f.label :teaser %>
+  <%= f.text_field :teaser %>
+  </div> 
+
+  <div class="field">
+	<%= f.label :description %>
+	<%= f.text_area :description %>
+  </div> 
+
+  <div class="field">
+	<%= f.label :goal %>
+	<%= f.number_field :goal %>
+  </div> 
+
+  <div class="action">
+  	<%= f.submit name = "Publish Project" %>
+  </div>
+
+<% end %>	
